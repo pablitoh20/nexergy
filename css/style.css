@@ -53,10 +53,8 @@
     transition: .5s;
 }
 
-.btn.btn-primary,
-.btn.btn-outline-primary:hover {
-    color: #FFFFFF;
-}
+
+
 
 .btn-square {
     width: 38px;
