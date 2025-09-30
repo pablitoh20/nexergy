@@ -642,3 +642,64 @@
   .timeline-item { flex-direction: column !important; }
   .service-icon { margin-bottom: 1rem; }
 }
+
+
+/* Left Menu */
+
+.floating-index {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.bullet-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0056b3;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50%;
+  width: 45px;   /* tamaño fijo (solo icono) */
+  height: 45px;
+  transition: background-color 0.2s;
+  overflow: visible; /* permite que el label salga */
+}
+
+.bullet-right i {
+  font-size: 20px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Texto inicialmente oculto a la izquierda */
+.bullet-right .label {
+  position: absolute;
+  right: 100%; /* aparece a la izquierda del botón */
+  top: 50%;
+  transform: translateY(-50%);
+  background: lightslategrey;
+  color:#fff ;
+  padding: 5px 10px;
+  border-radius: 20px 0 0 20px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* SOLO el hovered muestra su texto */
+.bullet-right:hover {
+  background-color: lightslategrey;
+}
+
+.bullet-right:hover .label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(-5px); /* se desliza */
+}
